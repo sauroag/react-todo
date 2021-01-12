@@ -2,7 +2,7 @@
 import * as React from 'react';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
-import {UsersComponent, HomeComponent} from '@components';
+import {UsersComponent, HomeComponent, TodoComponent} from '@components';
 import {PrivateRoute} from '@hoc';
 import {DIContext, getDependencies} from '@helpers';
 
@@ -23,11 +23,15 @@ const App = (): JSX.Element => {
                 <li>
                   <Link to="/users">Users</Link>
                 </li>
+                <li>
+                  <Link to="/todo">Todo</Link>
+                </li>
               </ul>
             </nav>
             <Switch>
               <Route exact path="/" component={HomeComponent} />
               <PrivateRoute exact path="/users" component={UsersComponent} />
+              <Route exact path="/todo" component={TodoComponent} />
             </Switch>
           </div>
         </Router>

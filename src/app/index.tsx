@@ -9,7 +9,7 @@ import CONFIG from '@config';
 if (CONFIG.sentryDSN) {
   Sentry.init({dsn: CONFIG.sentryDSN});
 }
-
+console.log(CONFIG)
 ReactDOM.render(
   <AppComponent/>,
   document.getElementById("root")
